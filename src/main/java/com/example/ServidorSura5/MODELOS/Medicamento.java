@@ -1,7 +1,6 @@
 package com.example.ServidorSura5.MODELOS;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
 
 @Entity

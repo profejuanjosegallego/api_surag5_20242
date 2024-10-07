@@ -10,14 +10,14 @@ public class Medico
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long  id;
-    private String nombre;
-    private String matriculaProfesional;
-    private String especialidad;
-    private Integer salario;
-    private String ips;
-    private String correo;
-    private String telefono;
-    private String direccionConsultorio;
+    private String nombre; //35 caracteres y solo letras
+    private String matriculaProfesional; //20 caracteres
+    private String especialidad; //20 caracteres
+    private Integer salario; //solo positivos, menos de 10 megas y maximo 20
+    private String ips;  //50 caracteres
+    private String correo; //@sura.com.co
+    private String telefono; //12 caracteres
+    private String direccionConsultorio; //50 caracteres
     private Boolean finDeSemanaDisponible;
 
     public Medico()
