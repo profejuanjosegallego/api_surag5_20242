@@ -1,6 +1,9 @@
 package com.example.ServidorSura5.MODELOS;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name="medicos")
@@ -19,6 +22,12 @@ public class Medico
     private String telefono; //12 caracteres
     private String direccionConsultorio; //50 caracteres
     private Boolean finDeSemanaDisponible;
+
+    //Creando una relacion con la clase paciente
+    //me relaciono con muchos pacientes
+    @OneToMany(mappedBy = "medico" )
+    @JsonManagedReference
+    private List<Paciente> pacientes;
 
     public Medico()
     {

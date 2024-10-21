@@ -1,13 +1,13 @@
 package com.example.ServidorSura5.MODELOS;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
 @Entity
 @Table(name="signosvitales")
-public class SignoVital
-{
+public class SignoVital {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +15,11 @@ public class SignoVital
     private String nombre;
     private String valor;
     private LocalDate fechaMedida;
+
+    @ManyToOne
+    @JoinColumn(name = "fk_paciente", referencedColumnName = "id")
+    @JsonBackReference
+    private Paciente paciente;
 
     public SignoVital()
     {
